@@ -1,0 +1,11 @@
+.classpath
+.project
+.settings
+.cache
+target
+*.iml
+.idea
+*.mov
+.ipynb_checkpoints/
+*.ipynb
+

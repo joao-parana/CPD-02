@@ -1,0 +1,15 @@
+metastore_db/
+derby.log
+.classpath
+.project
+.settings
+.cache
+target
+*.iml
+.idea
+report_*.txt
+report.txt
+report_.txt
+stderr*
+nohup.out
+

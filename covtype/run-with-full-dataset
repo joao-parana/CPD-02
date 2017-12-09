@@ -1,0 +1,7 @@
+echo "Executando com dataset completo para $1 core(s)"
+echo "Execute tail -f report$2_$1.txt em outro terminal. Os erros e mensagens de debug ficam em stderr_$1.txt"
+INICIO=`date`
+time java -Xms512M -Xmx3500M -jar target/covtype-2.2.0-jar-with-dependencies.jar $1 full $2 > report$2_$1.txt  2> stderr$2_$1.txt
+echo "INICIO EM $INICIO                FIM EM `date`"
+grep "•••" report$2_$1.txt
+
