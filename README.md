@@ -1,7 +1,14 @@
-Advanced Analytics with Spark Source Code
-=========================================
+Advanced Analytics with Spark
+=============================
 
-Exemplo de build/run do capitulo 4 - Arvores de Decisão.
+## Predição de cobertura florestal usando árvores de decisão no Apache Spark
+
+### Analise exploratória do Dataset
+
+Use o programa R [/src/main/resources/explorer-with-R.R](/src/main/resources/explorer-with-R.R)
+para fazer analise exploratória do Dataset.
+
+Veja a seguir como fazer **build/run** do código para Arvores de Decisão.
 
 ### Build & Run
 
