@@ -205,7 +205,7 @@ rm -rf ~/.m2/repository/br/cefet-rj/eic
 
 ### Livro texto usado no Trabalho
 
-![Advanced Analytics with Spark](aas.png)
+![Advanced Analytics with Spark](covtype/aas.png)
 
 
 ### Data Set
