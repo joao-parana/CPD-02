@@ -5,7 +5,7 @@ Advanced Analytics with Spark
 
 ### Analise exploratória do Dataset
 
-Use o programa R [src/main/resources/explorer-with-R.R](src/main/resources/explorer-with-R.R)
+Use o programa R [covtype/src/main/resources/explorer-with-R.R](covtype/src/main/resources/explorer-with-R.R)
 para fazer analise exploratória do Dataset.
 
 Veja a seguir como fazer **build/run** do código para Arvores de Decisão.
