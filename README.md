@@ -1,6 +1,15 @@
 Advanced Analytics with Spark
 =============================
 
+## Versão do Java, Scala e Spark
+
+```
+Spark - 2.3.0-SNAPSHOT
+Scala - 2.11
+Java  - 1.8
+```
+
+
 ## Predição de cobertura florestal usando árvores de decisão no Apache Spark
 
 ### Analise exploratória do Dataset
@@ -10,24 +19,56 @@ para fazer analise exploratória do Dataset.
 
 Veja a seguir como fazer **build/run** do código para Arvores de Decisão.
 
-### Build & Run
+### Build
+
+É possivel fazer o build usando referência ao *parent pom* via Filesystem.
+
+```xml
+<relativePath>../parent/pom.xml</relativePath>
+```
+
+Este *parent pom* fica no diretório `parent`. Desta forma não é necessário
+instalar o *parent pom* no repositório local do Maven com `mvn install -N`
+antes de fazer o build do projeto.
+
+Basta fazer isso:
 
 ```bash
-cd CPD-02
+cd CPD-02/covtype
 mvn -Drat.ignoreErrors=true \
     -Dcheckstyle.skip \
     -Dmaven.test.skip=true \
     -Denforcer.skip=true \
     clean package install
-cd covtype
+```
+
+### Executando o projeto
+
+Na primeira vez é necessário criar o link simbólico para o dataset. O motivo é
+que este dataset é muito grande para ficar no Github então foi compactado e é
+necessario descompactar.
+
+```bash
 cd src/main/resources
 unzip covtype.csv.zip
 cd ../../..
 ln -s covtype-full.csv src/main/resources/covtype.csv
+```
+
+**OBS:** no Windows talvez seja necessário copiar o arquivo e neste caso,
+para não destruir o link simbólico no GitHub, use outro nome. O programa Scala
+deve ser alterado e o build deve ser refeito.
+
+Após o build descrito na seção anterior o programa pode ser invocado assim:
+
+```bash
 java -jar target/covtype-2.2.0-jar-with-dependencies.jar
 ```
+
 Você verá uma mensagem indicando que é necessário informar pelo menos um parâmetro.
 Iso indica que está tudo bem até aqui.
+
+Assim podemos executar passando os parâmetros necessários.
 
 Para rodar sem log algum podemos redirecionar `stderr`
 
@@ -51,6 +92,7 @@ Por exemplo, passando 4 como mostrado abaixo, o modelo será executado com o dat
 ```bash
 ./run-with-full-dataset 4
 ```
+
 ou para executar no cluster com um total de 16 cores (ex.: 4 nós sendo cada um com 4 cores) :
 
 ```bash
