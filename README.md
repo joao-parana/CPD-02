@@ -39,8 +39,11 @@ mvn -Drat.ignoreErrors=true \
     -Dcheckstyle.skip \
     -Dmaven.test.skip=true \
     -Denforcer.skip=true \
+    -Dspark.daily="-SNAPSHOT" \
     clean package install
 ```
+
+o parâmetro `spark.daily` é opcional.
 
 ### Executando o projeto
 
@@ -66,7 +69,7 @@ java -jar target/covtype-2.2.0-jar-with-dependencies.jar
 ```
 
 Você verá uma mensagem indicando que é necessário informar pelo menos um parâmetro.
-Iso indica que está tudo bem até aqui.
+Isso indica que está tudo bem até aqui.
 
 Assim podemos executar passando os parâmetros necessários.
 
@@ -77,7 +80,7 @@ time java -jar target/covtype-2.2.0-jar-with-dependencies.jar 4 2> /dev/null
 ```
 
 Este comando acima executa com **dataset pequeno** (apenas 3000 tuplas)
-que demora em torno de 1 muto num Intel i5 com 4GB de RAM.
+que demora em torno de 1 minuto num macOS com Intel i5 e 4GB de RAM.
 
 Para tomar os tempos finais com o Dataset completo use:
 

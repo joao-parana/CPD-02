@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <parent>
-    <groupId>br.cefet-rj.eic</groupId>
+    <groupId>${my.group.id}</groupId>
     <artifactId>spark-parent</artifactId>
-    <version>2.3.0-SNAPSHOT</version>
+    <version>${spark.version}</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
@@ -24,7 +24,8 @@
   </dependencies>
 
   <properties>
-    <spark.version>2.3.0-SNAPSHOT</spark.version>
+    <spark.daily>-SNAPSHOT</spark.daily>
+    <spark.version>2.3.0${spark.daily}</spark.version>
   </properties>
 
   <build>
